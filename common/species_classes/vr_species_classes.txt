@@ -1,0 +1,177 @@
+
+ROBOT = {
+	archetype = ROBOT
+
+	playable = { has_global_flag = game_started }
+	randomized = no
+	gender = no
+	use_climate_preference = no
+	portrait_modding = yes
+
+	leader_age_min = 2
+	leader_age_max = 10
+
+	custom_portraits = {
+		randomized = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		portraits = {
+			"sd_hum_robot"
+			"sd_mam_robot"
+			"sd_rep_robot"
+			"sd_avi_robot"
+			"sd_art_robot"
+			"sd_mol_robot"
+			"sd_fun_robot"
+			"sd_pla_robot"
+			"yukari"
+			"maki"
+			"zunko"
+			"akane"
+			"aoi"
+			"seika"
+			"kiritan"
+			"akari"
+			"ia"
+			"one"
+			"allvr"
+		}
+	}
+
+	custom_portraits = {
+		randomized = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = {
+			"lith_machine"
+		}
+	}
+
+	custom_portraits = {
+		randomized = { has_necroids = yes }
+		playable = { has_necroids = yes }
+		portraits = {
+			"nec_machine"
+		}
+	}
+
+	custom_portraits = {
+		randomized = { has_aquatics = yes }
+		playable = { has_aquatics = yes }
+		portraits = {
+			"aqu_machine"
+		}
+	}
+
+	custom_portraits = { # use custom_portraits instead of portraits so we can put them after the custom_portraits above
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+			"default_robot"
+		}
+	}
+
+	graphical_culture = ai_01
+	move_pop_sound_effect = "robot_pops_move"
+
+	resources = {}
+}
+
+VOICEROID = {
+	archetype = BIOLOGICAL
+
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+	randomized = yes
+	gender = no
+
+	portraits = {
+		"yukari"
+		"maki"
+		"zunko"
+		"akane"
+		"aoi"
+		"seika"
+		"kiritan"
+		"akari"
+		"ia"
+		"one"
+		"allvr"
+	}
+
+
+
+	graphical_culture = voiceroid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+VOICEMACH = {
+	archetype = MACHINE
+
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	randomized = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		NOT = { has_global_flag = game_started }
+	}
+	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
+	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
+
+	gender = no
+	use_climate_preference = no
+	portrait_modding = yes
+
+	leader_age_min = 2
+	leader_age_max = 10
+
+	portraits = {
+		"yukari"
+		"maki"
+		"zunko"
+		"akane"
+		"aoi"
+		"seika"
+		"kiritan"
+		"akari"
+		"ia"
+		"one"
+		"allvr"
+	}
+
+	graphical_culture = voiceroid_02
+	move_pop_sound_effect = "robot_pops_move"
+	
+	resources = {}
+}
+
+VOICELITH = {
+	archetype = LITHOID
+
+	playable = { has_lithoids = yes }
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+
+	randomized = { has_lithoids = yes }
+
+	gender = no
+
+	custom_portraits = {
+		randomized = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = {
+		"yukari"
+		"maki"
+		"zunko"
+		"akane"
+		"aoi"
+		"seika"
+		"kiritan"
+		"akari"
+		"ia"
+		"one"
+		"allvr"
+		}
+	}
+
+	graphical_culture = voiceroid_03
+	move_pop_sound_effect = "reptilian_pops_move"
+
+	resources = {}
+
+	trait = "trait_lithoid"
+}
